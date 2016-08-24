@@ -1,137 +1,136 @@
-# Jekyll-Mono
+# Yummy Jekyll Theme
 
-**Jekyll-Mono** is a simple and elegant GitHub Profile cum Blog theme based on Barry Clark's [Jekyll-Now](https://github.com/barryclark/jekyll-now). It's a result of my attempt to learn **Jekyll** and create a minimalistic theme to put up my CV alongwith some blog posts.
+A Simple, Bootstrap Based Theme. Especially for developers who like to show their projects on website and like to take notes. There are also some magical features to discover. 
 
-It is crafted with 💙 by [Akshay Agarwal](https://github.com/AkshayAgarwal007).
+## [Live Demo](http://dongchuan.github.io/)
 
-![Jekyll-Mono Home Page](/images/ss.png)
+Open issues if you find bugs or even have trouble installing jekyll or dependencies. :D
 
+Or contact: dongchuan55@gmail.com
 
-## What is Jekyll?
+> Strongly suggest to fork and change project name to create your GitHub Pages instead of downloading it directly. Because in the future, I will develop many funny modules like 'footprint' to show your world wide trip. Could be easier to merge new features in the future.
 
-It is a static site generator. It takes your content written in Markdown, passes it through your templates and spits it out as a complete static website, ready to be served using GitHub pages for free.
-Because your entire blog is static it serves and perform faster. It consumes less web resources namely memory and I/O.
+## Notable Features
 
-## Getting Started
+* Compatible with Jekyll 3.x and GitHub Pages
+* Based on Bootstrap
+* [Github Module](http://dongchuan.github.io/open-source) to show your popular projects in a single page and on sidebar automatically. (Datas are retreived by github metadata instead of by api calls, so no delay) 
+* [Post Module](http://dongchuan.github.io/blog) to show all your posts with timeline
+* [Bookmark Module](http://dongchuan.github.io/bookmark) to establish a quick mark about all libs/tools/books you like to use.
+* [Post Navigation Module](http://dongchuan.github.io/css/2016/04/22/CSS-Animation.html) to generat a quick directory of your post by titles/subtitles automatically.
+* Support [Disqus Comment](https://disqus.com/home/explore/)
+* Support [Google Analytics](https://analytics.google.com/analytics/web/)
 
-Let's quickly set up your new blog in a matter of minutes.
+Features in future:
+* A Footprint module to show all your travel around the world
+* Feature to share. (Facebook, twitter, evernote and so on)
+* (Not sure) A embeded todo list. (Not sure) to travel, to complete, to do for your parents, etc. To do in life!
+* Creative ideas to discuss with you :P
 
-### Fork this repository
+## Install and setup
 
-Hit the “Fork” button in the top-right corner of the repository to fork a copy of this theme to your GitHub account and rename it to **yourusername.github.io** and then visit https://yourusername.github.io and you'll be able to see your newly created blog using Jekyll-Mono.
+Before using it, you may need [Bower](http://bower.io/) and [Bundler](http://bundler.io/) on your local to install dependencies.
 
-### Customise Jekyll-Mono
+1. Fork code and clone
+2. Run `bower install` to install all dependencies in [bower.json](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/bower.json)
+3. Run `bundle install` to install all dependencies in [Gemfile](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/Gemfile)
+4. Update `_config.yml` with your own settings.
+5. Add posts in `/_posts`
+6. Commit to your own Username.github.io repository.
+7. Then come back to star this theme!
 
-So now your blog is live with its default settings. Let's customise it now.
+> When install dependencies by bundler or gem, you may have some errors depending on your environment.
 
-Edit the _config.yml and enter your site name and description. You can easily turn on Google Analytics tracking, Disqus commenting and cool loking social icons here too.
+> Error about `json`. Check response of [Massimo Fazzolari on Stackoverflow](http://stackoverflow.com/questions/8100891/the-json-native-gem-requires-installed-build-tools) to quick fix your problem. (Please also use latest version instead of 1.9.3 mentioned in the response)
+  
+> Error about `jekyll-paginate`. Please check [here](http://stackoverflow.com/questions/35401566/dont-have-jekyll-paginate-or-one-of-its-dependencies-installed)
 
-Jekyll-Mono also comes with the option of setting up the color scheme of your blog. You can do this by editing _variables.scss that lies inside the _sass folder. You can change the main theme color by simply replacing the current hex color value of `$mono` with the one of your choice. A few main theme sample colors are included in there as comments. Apart from the main theme color you can also change the header link color, navbar hover color, hyperlink color as well as the color of the various headings.
+> Error about `SSL_connect`. Please check [here](http://stackoverflow.com/questions/15305350/gem-install-fails-with-openssl-failure) and [here](http://railsapps.github.io/openssl-certificate-verify-failed.html)
 
-A look at the customisations you can do with _variable.scss
+> For the moment, when you test on your local, you need to keep internet connection. Bug will be fixed soon.
 
-```
-// Main theme colors 
-// Some cool main theme colors(violet:#8476ad;blue:#5cacee;red:#ff7373,#ff6f69;green:#6acf64,#2ddbb3;orange:#ffa268)
+## How to use
 
-$mono-color:#8476ad;                // main theme color(header, links, footer icons, buttons, post-title)
-$hl-color: $darkGray;              // header link color (author name and posted on date) for blog post meta 
-$navbar-hover-color:$gray;        // navbar hover color (site name and navbar links hover color)
-$link-color: $darkerGray;        // normal hyperlink color other than the ones above.
+#### Create a new post
 
+Create a `.md` file inside `_posts` folder.
 
-// Heading colors
-// You can play around with these too!
-$h1-color: $mono-color;
-$h2-color: $mono-color; 
-$h3-color: $darkerGray; 
-$h4-color: $gray;
-``` 
-Have a look at Jekyll-Mono with four different main theme colors.
- 
-![Jekyll Mono in 4 different colors](/images/ss-color.png)
-
-Finally you need to set up your avatar. Pick up your avatar, resize it to 220x220px simply using paint or any editor of your choice and upload it to the images folder. Now open _variables.scss, you'll see something like this `$avatar: "/images/avatar.jpg";`. Here change the avatar.jpg to what you have uploaded just now.
-
-
-### Start Blogging
-
-Publish your first blog post by editing /_posts/2016-03-06-Eternal-Lorem-Ipsum.md. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) might come in handy while writing your blog posts in Markdown. If you are not comfortable with writing in Markdown you can use [Prose](http://prose.io/) for writing your blog posts. [This](https://developmentseed.org/blog/2012/june/25/prose-a-content-editor-for-github/s) will help you in setting up prose.
-
-![Post](/images/post.PNG)
-
-To create a post just click on create new file button in /_posts/. Create a new file with the following naming convention: **year-month-day-title.md**. Also make sure to include the front-matter at the top of each new blog post.
-
-You can see the front matter at the top of /_posts/2016-03-06-Eternal-Lorem-Ipsum.md. It looks something like this. You have to change the title and author according to your post. The layout will remain the same.
+Name the file according to the standard jekyll format.
 
 ```
---- 
-layout: post
-title: The Eternal Lorem Ipsum Placeholder Text Here
-author: Author Name
+2016-01-19-i-love-yummy.md
+```
+
+Write the Front Matter and content in the file.
+
+```
 ---
+layout: post
+title: Post title
+category: Category
+tags: [tag1, tag2]
+---
+```
+
+Please find examples [here](https://github.com/DONGChuan/DONGChuan.github.io/tree/master/_posts)
+
+#### [Post Navigation Module](http://dongchuan.github.io/css/2016/04/22/CSS-Animation.html)
+
+When writing post, please always follow this format:
+
+```
+Description about this post, blablabla
+
+## Title A
+
+### Title A-1
+
+### Title A-2
+
+## Title B
+
+### Title B-1
 
 ```
 
-### About and Projects Page
+So, Title A, A-1, A-2, Title B, B-1 will be detected and created as a directory
 
-In the parent folder you'll find about.md and projects.md. These are templates for helping you to set up your biodata/CV and projects that will be available at yourusername.github.io/about and yourusername.github.io/projects respectively. Again you can edit it in Markdown on GitHub or using Prose as per your choice.
+For example, [a demo post](https://github.com/DONGChuan/DONGChuan.github.io/edit/master/_posts/2016-04-22-CSS-Animation.md)
 
+But if you do not like it or your post is quite short. You want to hide this navigation to make your post occupy your full screen. You just need to set **no-post-nav:true** in the Front Matter of the post where you want to hide this feature :D
 
-## Demo
+#### [Github Module](http://dongchuan.github.io/open-source)
 
-You can see the live demo of this theme at http://akshayagarwal007.github.io/Jekyll-Mono/
+This module will get automatically all your repository information from github. But to test on your local, you must keep internet connection. 
+In the future, it will also show the repositories you contributed a lot and the ones of your organization.
 
-## Local Development
+#### [Bookmark Module](http://dongchuan.github.io/bookmark)
 
-For setting up your development environment you can follow the official Jekyll [Documentation](https://jekyllrb.com/docs/installation/). It's a little bit complicated for Windows users. Let's see how it's done on windows:
+To add new marks, you only need to edit [bookmark.md](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/bookmark.md).
 
-1. **Install Chocolatey**. **[Chocolatey](https://chocolatey.org)** is a package manager for windows. It's awesome. 
-   Open a command propmt with administrator access. Paste this. Hit Enter and restart the command prompt.
-   
-   ```
-   @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
-   
-   ```
+#### [Customize About Page](http://dongchuan.github.io/about)
 
-2. **Install Ruby** : In your command prompt type `choco install ruby -y`.
- Hit Enter. After installation restart the cmd with administrator privileges.
+Feel free to customize about.me page to show yourself. You only need to modify [about.md](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/about.md) and [about.html](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/_includes/about.html)
 
-3. **Install Jekyll/Sass (plug-ins used by GitHub Pages)**: `gem install github-pages`
+## ToDo
 
-4. **Clone your fork of Jekyll-Mono** `git clone https://github.com/yourusername/yourusername.github.io.git`
+- [ ] List posts by a specified tag
+- [ ] New module FootPrint to show your world around trips
+- [ ] Show projects from your orgnization on github. (Siderbar, in open-source page)
+- [ ] To fix bug - could only test on local with internet connected.
 
-5. **Serve the site** by `jekyll serve`. It regenerates itself after any changes has been made.
+## Contributor
 
-6. **View your site** at http://127.0.0.1:4000/
-
-7. If you make any changes to _config.yml you'll need to rebuild the site using `jekyll build` and then again a `jekyll serve` to serve it. You'll need to do a rebuild only if you want to see the changes locally, else you can simply commit your changes and push them to your GitHub repo, GitHub pages will rebuild and serve your website.
-
-## Credits
-
-* [Barry Clark](https://github.com/barryclark) for creating [Jekyll-Now](https://github.com/barryclark/jekyll-now) on which this theme is based.
-* [Manoela Ilic](https://github.com/crnacura) of Codrops for writing awesome articles on web design.
-* [David Miller](https://github.com/davidtmiller) of Blackrock Digital for making awesome open source themes.
-* [Jekyll](https://github.com/jekyll/jekyll) - Thanks to its creator and contributors.
-* [Font-Awesome](http://fontawesome.io) - Thanks to its creator and contributors.
-
-## Contributing
-
-* Found a bug? Report it on GitHub [Issues](https://github.com/AkshayAgarwal007/Jekyll-Mono/issues) and include a code sample.
-* [Fork](https://github.com/AkshayAgarwal007/Jekyll-Mono/fork) the repository and start your own blog using it and let me know about it so that I can include a reference to it here. Probably the best way you can contribute :)
-* If you find anything that's wrong or want to talk to me about anything related to this theme or want to contribute in any way, please feel free to [mail me](mailto:agarwal.akshay.akshay8@gmail.com).
+* [DONGChuan](https://github.com/DONGChuan)
+* [Mojtaba Koosej](https://github.com/mkoosej)
+* [shahsaurabh0605](https://github.com/shahsaurabh0605)
+* [Z-Beatles](http://www.waynechu.cn/)
+* [LM450N](https://github.com/LM450N)
 
 ## License
 
-Jekyll-Mono is licensed under [MIT](https://github.com/AkshayAgarwal007/Jekyll-Mono/blob/master/LICENSE.txt).
+The Apache License 2.0
 
+Copyright (c) 2016 DONG Chuan
 
-
-
-
-
-
-
-
-
-  
+Check [LICENSE](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/LICENSE) file and [official website](http://www.apache.org/licenses/LICENSE-2.0) for details
