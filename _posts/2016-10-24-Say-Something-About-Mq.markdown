@@ -7,7 +7,7 @@ categories: [MQ]
 ---
 # MQ简介
 
-## 什么是MQ？
+## MQ是什么
 
 - Hello
 
@@ -17,7 +17,7 @@ categories: [MQ]
 
 222222222
 
-## MQ有什么功能
+## MQ要具备什么功能
 
 - H2l
 
