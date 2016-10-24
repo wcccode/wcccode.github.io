@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: I m Wcccode # ex. I m Wcc
+title: I'm Wcc # ex. I m Wcc
 name: wcccode # ex. DONGChuan
 email: wcccode618@gmail.com
 location: 厦门 # ex. Nice, France
@@ -88,5 +88,5 @@ analytics :
 # For about.html. Fell free to create your own!
 skill_software_keywords: [Java, Golang, Node, MySQL, Oracle, SQLServer, PL/SQL, Design Patterns]
 skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
-skill_mobile_app_keywords: [Android, Sketch UI Desgin]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, ExpressJS, MongoDB, Redis, Boostrap]
+skill_mobile_app_keywords: [mobile web]
