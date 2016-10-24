@@ -1,6 +1,6 @@
 ---
 published: true
-title: Test
+title: Test00
 layout: post
 ---
 # this is test blog00000
