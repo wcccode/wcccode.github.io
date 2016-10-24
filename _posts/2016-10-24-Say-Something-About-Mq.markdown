@@ -1,8 +1,9 @@
 ---
 published: true
-title: 聊聊MQ
+title: 说说MQ
 layout: post
 tags: [MQ]
+categories: [MQ]
 ---
 # this is test blog00000
 
