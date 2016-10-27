@@ -61,6 +61,6 @@ writing...
 
 参考资料
 
-- http://tech.meituan.com/mq-design.html
+- http://tech.meituan.com/mq-design.html(http://tech.meituan.com/mq-design.html)
 
-- http://bravenewgeek.com/dissecting-message-queues/
+- http://bravenewgeek.com/dissecting-message-queues/(http://bravenewgeek.com/dissecting-message-queues/)
