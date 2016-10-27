@@ -64,3 +64,5 @@ writing...
 * [http://tech.meituan.com/mq-design.html](http://tech.meituan.com/mq-design.html)
 
 * [http://bravenewgeek.com/dissecting-message-queues/](http://bravenewgeek.com/dissecting-message-queues/)
+
+* [https://www.digitalocean.com/community/tutorials/an-advanced-message-queuing-protocol-amqp-walkthrough](https://www.digitalocean.com/community/tutorials/an-advanced-message-queuing-protocol-amqp-walkthrough)
