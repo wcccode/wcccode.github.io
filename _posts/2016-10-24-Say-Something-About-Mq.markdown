@@ -52,7 +52,7 @@ writing...
 
 - NSQ
 
-![vs](https://raw.githubusercontent.com/wcccode/wcccode.github.io/master/assets/images/16102702.png)
+![vs](http://images.cnblogs.com/cnblogs_com/gossip/201206/201206302045504881.jpg)
 
 ## 总结
 
