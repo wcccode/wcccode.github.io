@@ -62,3 +62,5 @@ writing...
 参考资料
 
 - http://tech.meituan.com/mq-design.html
+
+- http://bravenewgeek.com/dissecting-message-queues/
