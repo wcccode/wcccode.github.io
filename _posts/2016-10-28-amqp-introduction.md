@@ -153,6 +153,31 @@ Publisher---------------> EXCHANGE-----------> Queue -------------> Consumer
 
 在接收到发布者消息后，Exchange会处理并路由消息到一个或多个队列上。信息路由方式取决于Exchange的类型，目前有四种Exchange类型：
 
-- 直接交换（Direct Exchange）
+- 直接路由（Direct Exchange）
+
+直接路由基于路由密钥（routing keys）分发消息到队列中。Routing keys作为额外的数据定义，设置消息分发到何处。直接型的典型案例是用于负载均衡。
+
+- 分散路由（Fanout Exchange）
+
+分散路由完全忽略routing keys，直接分发消息到所有的队列中。分散型经常用于分发消息给多个客户端，类似通知所有人，如：
+
+1.共享消息（如聊天服务）和更新（如新闻）
+
+2.应用状态（如配置）
+
+- 话题路由（Topic Exchange）
+
+话题路由主要用于发布/订阅模式（pub/sub）。这种类型的routing keys会和队列一起绑定到Exchange上，用于消息路由的匹配和发送。
+
+无论何时都需要有消费者参与，topic Exchange分发消息是基于routing keys和模式。
+
+- 头部路由（Header Exchange）
+
+头部路由由额外的消息属性组成，而不是使用routing keys来路由消息到队列。能够使用除了strings外的其他数据类型，使路由的机制有更多可能，但是和直接路由有点类似。
+
+# AMQP的Broker 和 E-Mailing的区别
+
+邮件由发送消息（publishing）组成，通过邮件服务器（Broker）去接收和处理消息到对应的邮箱中（queue），最后跟着请求获取信息（consumer）。
 
 
+原文：[https://www.digitalocean.com/community/tutorials/an-advanced-message-queuing-protocol-amqp-walkthrough](https://www.digitalocean.com/community/tutorials/an-advanced-message-queuing-protocol-amqp-walkthrough)
