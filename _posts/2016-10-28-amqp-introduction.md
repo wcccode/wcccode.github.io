@@ -149,4 +149,10 @@ APPLICATION-------------> EXCHANGE-----------> TASK LIST----------> WORKER
    
 Publisher---------------> EXCHANGE-----------> Queue -------------> Consumer
  
- 
+# AMQP的Exchange的工作方式
+
+在接收到发布者消息后，Exchange会处理并路由消息到一个或多个队列上。信息路由方式取决于Exchange的类型，目前有四种Exchange类型：
+
+- 直接交换（Direct Exchange）
+
+
