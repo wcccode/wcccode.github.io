@@ -143,10 +143,10 @@ AMQP模型定义了消息如何接收、路由、存储、队列，以及应用�
 
 在AMQP中，Broker负责接收消息m，并路由到相应的地方
 
-APPLICATION       EXCHANGE        TASK LIST        WORKER
+APPLICATION              EXCHANGE            TASK LIST         WORKER
 
-   [DATA] -------> [DATA] ---> [D]+[D][D][D] --->  [DATA]
+[DATA]------------------> [DATA] ------------> [D]+[D][D][D] --->  [DATA]
    
- Publisher        EXCHANGE          Queue         Consumer
+Publisher                EXCHANGE             Queue             Consumer
  
  
