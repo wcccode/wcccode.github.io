@@ -182,7 +182,7 @@ Publisher---------------> EXCHANGE-----------> Queue -------------> Consumer
 
 原文：[https://www.digitalocean.com/community/tutorials/an-advanced-message-queuing-protocol-amqp-walkthrough](https://www.digitalocean.com/community/tutorials/an-advanced-message-queuing-protocol-amqp-walkthrough)
 
-相关资料
+# 相关资料
 
 [https://netprototalk.wordpress.com/2015/10/01/amqp-as-a-network-protocol-2/](https://netprototalk.wordpress.com/2015/10/01/amqp-as-a-network-protocol-2/)
 
