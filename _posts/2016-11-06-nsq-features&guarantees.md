@@ -2,7 +2,7 @@
 published: true
 title: nsq的特性和可靠性
 layout: post
-tags: [NSQ][MQ]
+tags: [NSQ,MQ]
 categories: [MQ]
 ---
 
