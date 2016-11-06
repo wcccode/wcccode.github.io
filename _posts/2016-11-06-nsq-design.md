@@ -7,7 +7,7 @@ tags: [MQ,NSQ]
 
 NSQ的设计思想
 
-NSQ是一个simplequeue的继承者，设计的目的是为了：
+NSQ继承于simplequeue，是一个实时分布式消息平台，设计目标有：
 
 - 支持拓扑结构，实现高可用和消除单点故障
 
