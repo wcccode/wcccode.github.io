@@ -187,3 +187,7 @@ Publisher---------------> EXCHANGE-----------> Queue -------------> Consumer
 [https://netprototalk.wordpress.com/2015/10/01/amqp-as-a-network-protocol-2/](https://netprototalk.wordpress.com/2015/10/01/amqp-as-a-network-protocol-2/)
 
 [https://paolopatierno.wordpress.com/2015/08/30/amqp-isnt-so-scary-if-you-know-how-to-start/](https://paolopatierno.wordpress.com/2015/08/30/amqp-isnt-so-scary-if-you-know-how-to-start/)
+
+[http://www.drdobbs.com/open-source/io-multiplexing-scalable-socket-servers/184405553](http://www.drdobbs.com/open-source/io-multiplexing-scalable-socket-servers/184405553)
+
+[https://onedrive.live.com/view.aspx?resid=123CCD2A7AB10107!732016&ithint=file%2cpptx&lor=shortUrl&app=PowerPoint](https://onedrive.live.com/view.aspx?resid=123CCD2A7AB10107!732016&ithint=file%2cpptx&lor=shortUrl&app=PowerPoint)
