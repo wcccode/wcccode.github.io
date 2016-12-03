@@ -2,8 +2,8 @@
 published: true
 title: 说说MQ
 layout: post
-tags: [MQ]
-categories: [MQ]
+tags: [mq]
+categories: [mq]
 ---
 # MQ简介
 

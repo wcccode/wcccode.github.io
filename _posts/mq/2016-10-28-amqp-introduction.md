@@ -2,8 +2,8 @@
 published: true
 title: AMQP介绍
 layout: post
-tags: [MQ]
-categories: [MQ]
+tags: [mq]
+categories: [mq]
 ---
 
 AMQP高级消息队列协议介绍

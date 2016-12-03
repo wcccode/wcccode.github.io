@@ -2,8 +2,8 @@
 published: true
 title: NSQ的特性和可靠性
 layout: post
-tags: [MQ]
-categories: [MQ]
+tags: [mq]
+categories: [mq]
 ---
 
 NSQ是一个实时分布式消息平台
