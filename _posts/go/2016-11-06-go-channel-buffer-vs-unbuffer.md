@@ -98,3 +98,5 @@ func init() {
 ...
 
 当一个worker在忙于写硬盘时，其他空闲worker可以继续处理日志信息。
+
+原文 http://openmymind.net/Introduction-To-Go-Buffered-Channels/[http://openmymind.net/Introduction-To-Go-Buffered-Channels/]
