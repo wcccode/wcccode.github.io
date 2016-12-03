@@ -6,14 +6,14 @@ markdown: kramdown
 # Author
 author: 
   name: Terry Chen Nan
-  email: ichennan@sina.com
-  link: http://ichennan.github.io
-  github: http://github.com/ichennan
+  email: wcccode618@gmail.com
+  link: http://wcccode.github.io
+  github: https://github.com/wcccode
 
 # Site
 title: Ichennan
 description: Blog of Terry Chen Nan
-url: http://ichennan.github.io
+url: http://wcccode.github.io
 rss_url: /pages/atom.xml
 
 # gavatar Favicon
@@ -22,11 +22,11 @@ favicon: /public/img/deer3.png
 
 # google analytics
 ga:
-  id: UA-54262064-1 
-  url: ichennan.github.io
+  id:  
+  url: wcccode.github.io
 
 # default active
-active: 读书
+active: 记录
 
 # 首页除了最新文章外显示分类
 # cates:
@@ -37,5 +37,5 @@ active: 读书
 locals:
   tags: 标签
   about: 关于
-  newest: 吃饭睡觉打豆豆
+  newest: 最近文章
   archive: 存档
