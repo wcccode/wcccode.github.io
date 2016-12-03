@@ -12,6 +12,7 @@ tags: [go]
 下面是一个小例子
 
 ...
+
 var c = make(chan int, 5)
 
 func main() {
@@ -28,6 +29,7 @@ func worker(id int) {
     time.Sleep(time.Second)
   }
 }
+
 ...
 
 上面例子中有一个缓冲区大小为5的channel和一个每次接收数据都睡眠1秒的worker。很明显channel的缓冲区会被快速的填满数据然后阻塞，直到worker开始消费数据。
@@ -35,7 +37,9 @@ func worker(id int) {
 
 缓冲区的channel有何用处呢？让我们来看个简单但是真实的例子：记录web服务请求的日志。我们要记录的服务请求，在并发量大时请求数会达到几千个每秒，为了提高
 性能，我们会先把日志缓存在内存中，并定时写到硬盘上。先来看下无缓冲区的channel实现：
+
 ...
+
 var channel = make(chan []byte)
 func init() {
   go worker(8192)
@@ -72,6 +76,7 @@ func worker(size int) {
     position += length
   }
 }
+
 ...
 
 首先，声明了一个channel和worker，Log方法会根据request构造日志信息并发送给channel，worker会从channel中接收到日志信息，并判断缓存是否还有空间，若有
@@ -79,7 +84,9 @@ func worker(size int) {
 
 在正常情况下，能够运行的很好，因为都是在内存中复制bytes。但是当缓存数据需要写入硬盘时，处理request的goroutine将会阻塞当往channel写日志信息时
 (channel <- createLog(req))。如何解决？可以通过缓冲区和更多的worker来解决，只需部分改动下：
+
 ...
+
 const workerCount = 4
 var channel = make(chan []byte, workerCount)
 func init() {
@@ -87,5 +94,7 @@ func init() {
     go worker(8192)
   }
 }
+
 ...
+
 当一个worker在忙于写硬盘时，其他空闲worker可以继续处理日志信息。
