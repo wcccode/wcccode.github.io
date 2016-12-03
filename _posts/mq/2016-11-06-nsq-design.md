@@ -1,8 +1,8 @@
 ---
 layout: post
 title: NSQ的设计思想
-categories: [MQ,NSQ]
-tags: [MQ,NSQ]
+categories: [MQ]
+tags: [MQ]
 ---
 
 NSQ的设计思想
