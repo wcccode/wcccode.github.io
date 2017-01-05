@@ -106,4 +106,4 @@ NSQ的通信协议是一种带有简单报文大小前缀的类似“memcached�
 
 ## 参考资料
 
-(https://speakerdeck.com/snakes/nsq-nyc-data-engineering-meetup)[https://speakerdeck.com/snakes/nsq-nyc-data-engineering-meetup]
+[https://speakerdeck.com/snakes/nsq-nyc-data-engineering-meetup](https://speakerdeck.com/snakes/nsq-nyc-data-engineering-meetup)
