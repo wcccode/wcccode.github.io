@@ -87,6 +87,7 @@ func main() {
 	result, errorSpecific = doSpecificThing()
 }
 ```
+
 ## 品牌或单词开头大写，其他都小写
 
 正确方式
