@@ -7,7 +7,7 @@ tags: [go]
 
 # go的最佳实践
 
-在编码和[重构](https://github.com/golang/go/wiki/CodeReviewComments)时，有些go风格的惯用手法。下面介绍一些惯用手法。
+在编码和[重构](https://github.com/golang/go/wiki/CodeReviewComments)时，go有些惯用方法，下面介绍一些惯用方法。
 
 ## 某些单词的拼写要保持一致性
 正确方式
