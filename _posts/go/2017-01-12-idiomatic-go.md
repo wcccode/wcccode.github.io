@@ -32,7 +32,7 @@ tags: [go]
 
 对于Go项目本身的拼写一致性，这些单词有多重拼写方式，Go有选择其中一个。参考对比[this](https://github.com/golang/go/search?q=marshaling+OR+unmarshaling) vs [this](https://github.com/golang/go/search?q=marshalling+OR+unmarshalling)
 
-## - 句子间使用一个空格
+## -句子间使用一个空格
 
 正确方式
 
