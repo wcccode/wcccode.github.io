@@ -133,6 +133,160 @@ var gitHubToken string
 //go:generate go run gen.go
 ```
 
+## 在带来的影响是可忽略的，或者增加可读性时，可以使用defer
+
+如果不能增强可读性，比如函数只有1-2步就执行完了，那么就不要使用它。
+
+显然，使用defer会带来性能的影响，特别是在秒级操作方法上。
+
+defer的[性能测试](https://lk4d4.darth.io/posts/defer/)
+
+## 对于资源文件的名称使用单数形式
+
+正确方式
+
+```
+golang.org/x/example/hello
+golang.org/x/example/outyet
+golang.org/x/mobile/example/basic
+golang.org/x/mobile/example/flappy
+github.com/shurcooL/tictactoe/player/bad
+github.com/shurcooL/tictactoe/player/random
+
+```
+错误方式
+
+```
+golang.org/x/examples/hello
+golang.org/x/examples/outyet
+golang.org/x/mobile/examples/basic
+golang.org/x/mobile/examples/flappy
+github.com/shurcooL/tictactoe/players/bad
+github.com/shurcooL/tictactoe/players/random
+
+```
+
+这是为了和go的风格保持一致
+
+## 避免未使用的函数对象变量
+
+正确方式
+
+```
+func (foo) method() {
+	...
+}
+
+```
+
+错误方式
+
+```
+func (f foo) method() {
+	...
+}
+```
+
+如果f未使用，那么可以清楚的知道，foo的方法和属性在method方法中未使用，增强了可读性。
+
+## 空字符串校验
+
+正确方式
+
+```
+if str == "" {
+	...
+}
+```
+
+错误方式
+
+```
+if len(str) == 0 {
+	...
+}
+```
+
+使用len来校验空字符串是正确的，但是len更适合在其他情况下使用。
+
+第一种方式更具有可读性，可以清楚的字段str是字符串而不是数组
+
+## 互斥锁保护罩
+
+```
+struct {
+	...
+
+	rateMu     sync.Mutex
+	rateLimits [categories]Rate
+	mostRecent rateLimitCategory
+}
+```
+
+这里rateMu是一个互斥锁保护罩，它位于所保护的变量的顶部，好比一个帽子一样。所以无需对修改变量进行注释，和下面的效果是一样的。
+
+```
+struct {
+	...
+
+	// rateMu protects rateLimits and mostRecent.
+	rateMu     sync.Mutex
+	rateLimits [categories]Rate
+	mostRecent rateLimitCategory
+}
+```
+
+但新增无需rateMu保护的变量时
+
+正确方式
+
+```
+ struct {
+ 	...
+
+ 	rateMu     sync.Mutex
+ 	rateLimits [categories]Rate
+ 	mostRecent rateLimitCategory
++
++	common service
+ }
+ ```
+ 
+ 错误方式
+ 
+ ```
+  struct {
+ 	...
+
+ 	rateMu     sync.Mutex
+ 	rateLimits [categories]Rate
+ 	mostRecent rateLimitCategory
++	common     service
+ }
+ ```
+ 
+ ## 不要在flag.Usage中使用os.Exit(2)
+ 
+ 正确方式
+ 
+ ```
+ flag.Usage = func() {
+	fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
+	flag.PrintDefaults()
+ }
+```
+
+错误方式
+
+```
+flag.Usage = func() {
+	fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
+	flag.PrintDefaults()
+	os.Exit(2)
+}
+```
+
+flag包的Usage在处理错误时，已经有对退出进行处理，所以无需再次调用os.Exit(2)
 
 # 参考资料
 
