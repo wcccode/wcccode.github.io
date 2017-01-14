@@ -241,6 +241,7 @@ struct {
 正确方式
 
 ```
+
  struct {
  	...
 
@@ -250,12 +251,14 @@ struct {
 +
 +	common service
  }
-```
- 
- 错误方式
  
 ```
-  struct {
+ 
+错误方式
+ 
+```
+
+ struct {
  	...
 
  	rateMu     sync.Mutex
@@ -263,10 +266,10 @@ struct {
  	mostRecent rateLimitCategory
 +	common     service
  }
- 
+
 ```
- 
- ## 不要在flag.Usage中使用os.Exit(2)
+
+## 不要在flag.Usage中使用os.Exit(2)
  
  正确方式
  
