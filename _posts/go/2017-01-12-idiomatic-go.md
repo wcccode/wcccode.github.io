@@ -30,7 +30,7 @@ tags: [go]
 
 ```
 
-对于Go项目本身的拼写一致性，这些单词有多重拼写方式，Go有选择其中一个。参考对比[this](https://github.com/golang/go/search?q=marshaling+OR+unmarshaling) vs [this](https://github.com/golang/go/search?q=marshalling+OR+unmarshalling)
+某些单词有多种拼写方式，Go有选择其中一个，并在项目编码中保持一致性。参考对比[this](https://github.com/golang/go/search?q=marshaling+OR+unmarshaling) vs [this](https://github.com/golang/go/search?q=marshalling+OR+unmarshalling)
 
 ## 句子间使用一个空格
 
@@ -133,15 +133,15 @@ var gitHubToken string
 //go:generate go run gen.go
 ```
 
-## 在带来的影响是可忽略的，或者增加可读性时，可以使用defer
+## 使用defer时，必须保证所带来影响是可忽略的，或者可以增强可读性
 
-如果不能增强可读性，比如函数只有1-2步就执行完了，那么就不要使用它。
+若不能增强可读性，如函数只有1-2步就执行完了，那么就不要使用它。
 
 显然，使用defer会带来性能的影响，特别是在秒级操作方法上。
 
 defer的[性能测试](https://lk4d4.darth.io/posts/defer/)
 
-## 对于资源文件的名称使用单数形式
+## 包的名称使用单数形式
 
 正确方式
 
@@ -166,7 +166,7 @@ github.com/shurcooL/tictactoe/players/random
 
 ```
 
-这是为了和go的风格保持一致
+这是为了和go的命名风格保持一致
 
 ## 避免未使用的函数对象变量
 
@@ -236,7 +236,7 @@ struct {
 }
 ```
 
-但新增无需rateMu保护的变量时
+但新增无需rateMu保护的变量时，添加一个空行隔开
 
 正确方式
 
