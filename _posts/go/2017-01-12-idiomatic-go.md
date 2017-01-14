@@ -250,12 +250,11 @@ struct {
 +
 +	common service
  }
- 
- ```
+```
  
  错误方式
  
- ```
+```
   struct {
  	...
 
@@ -264,13 +263,14 @@ struct {
  	mostRecent rateLimitCategory
 +	common     service
  }
- ```
+ 
+```
  
  ## 不要在flag.Usage中使用os.Exit(2)
  
  正确方式
  
- ```
+```
  flag.Usage = func() {
 	fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
 	flag.PrintDefaults()
