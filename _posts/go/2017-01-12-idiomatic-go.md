@@ -5,11 +5,11 @@ category: go
 tags: [go]
 ---
 
-# go编码的惯用方法
-
+# go的编码风格
 在编码和[重构](https://github.com/golang/go/wiki/CodeReviewComments)时，go有些惯用方法，下面介绍一些惯用方法。
 
 ## 某些单词的拼写要保持一致性
+
 正确方式
 
 ```
