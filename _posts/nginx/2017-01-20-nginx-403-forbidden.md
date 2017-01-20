@@ -15,13 +15,52 @@ Nginx 403的问题一般是目录是否存在以及是否有权限引起的问�
 
 - 给目录授权
 
-chmod 777 /data/www
+```
+# chmod 777 /data/www
+```
 
 - 修改nginx的启动用户,在conf配置文件中，把用户改成root
 
 ```
-user root
+user  nginx; // 修改成 user root
+worker_processes  1;
 
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+    proxy_read_timeout 1000;
+
+    gzip  on;
+    gzip_min_length  1k;
+    gzip_buffers     4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 3;
+    gzip_types     text/plain application/javascript application/x-javascript text/css application/xml text/xml;
+    gzip_vary on;
+    
+    client_max_body_size 100m;
+    include /etc/nginx/conf.d/*.conf;
+}
 ```
 
 ## selinux访问限制
