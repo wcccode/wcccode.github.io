@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Efficient String Concatenation in Go
+title: Go walkthrough io package
 category: go
 tags: [go]
 ---
