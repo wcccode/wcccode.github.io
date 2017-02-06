@@ -145,6 +145,7 @@ func benchmarkNaiveConcat(b *testing.B, numConcat int) {
     global = ns
 }
 ```
+
 ## 参考资料
 
 [http://herman.asia/efficient-string-concatenation-in-go](http://herman.asia/efficient-string-concatenation-in-go)
