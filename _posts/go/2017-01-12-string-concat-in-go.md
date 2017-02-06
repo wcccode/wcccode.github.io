@@ -105,6 +105,7 @@ fmt.Println(buffer.String())
 下面是对于不同方法，不同拼接数量在我机器（Go 1.2 on Ubuntu 64bit, Intel® Core™ i7-3667U CPU @ 2.00GHz）上执行go test -bench的结果
 
 ```
+
 BenchmarkNaiveConcat10    500000          6403 ns/op
 BenchmarkNaiveConcat100    20000         77001 ns/op
 BenchmarkNaiveConcat1000         500       3105361 ns/op
@@ -117,11 +118,13 @@ BenchmarkBufferString10   200000          7688 ns/op
 BenchmarkBufferString100       50000         45027 ns/op
 BenchmarkBufferString1000       5000        398311 ns/op
 BenchmarkBufferString10000       500       3702906 ns/op
+
 ```
 
 你也可以自己执行下，代码下载[https://github.com/hermanschaaf/go-string-concat-benchmarks](https://github.com/hermanschaaf/go-string-concat-benchmarks)。 一般的测试基准如下
 
 ```
+
 var global string
 
 // benchmarkNaiveConcat provides a benchmark for basic built-in
@@ -144,6 +147,7 @@ func benchmarkNaiveConcat(b *testing.B, numConcat int) {
     // safer.
     global = ns
 }
+
 ```
 
 ## 参考资料
