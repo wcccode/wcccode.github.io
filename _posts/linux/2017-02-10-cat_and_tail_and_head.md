@@ -7,7 +7,7 @@ tags: [linux]
 
 # cat、tail、head命令
 
-cat -n 文件路径/|tail -n +5\||head -n 6   // 显示 5 ～ 10 行的内容， 包括5 和10
+cat -n 文件路径\|tail -n +5\|head -n 6   // 显示 5 ～ 10 行的内容， 包括5 和10
 
 tail -n +iLinNum   // 从ILinNum开始显示到结束的内容
 
@@ -56,32 +56,32 @@ tail -n +k /etc/passwd
 
 //从第11行开始显示，但不包括最后3行
 
- head -n -3 /etc/passwd |tail -n +11
+ head -n -3 /etc/passwd \|tail -n +11
 
 //显示前20行，但从第11行开始
 
-head -n 20 /etc/passwd |tail -n +11 
+head -n 20 /etc/passwd \|tail -n +11 
 
 //显示除最后3行以外的所有行，但只显示最后10行
 
- head -n -3 /etc/passwd |tail -n 10 
+ head -n -3 /etc/passwd \|tail -n 10 
 
 //显示前20行中的后10行
 
-head -n 20 /etc/passwd |tail -n 10 
+head -n 20 /etc/passwd \|tail -n 10 
 
 //从第11行开始显示，但只显示前10行
 
-tail -n +11 /etc/passwd |head -n 10 
+tail -n +11 /etc/passwd \|head -n 10 
 
 //从第11行开始显示，但不包括最后3行
 
-tail -n +11 /etc/passwd |head -n -3
+tail -n +11 /etc/passwd \|head -n -3
 
 //显示最后13行中的前10行
 
-tail -n 13 /etc/passwd |head -n 10 
+tail -n 13 /etc/passwd \|head -n 10 
 
 //显示最后13行中除末尾的3行以外的前10行
 
-tail -n 13 /etc/passwd |head -n -3
+tail -n 13 /etc/passwd \|head -n -3
