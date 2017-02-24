@@ -7,7 +7,7 @@ tags: [linux]
 
 # cat、tail、head命令
 
-cat -n 文件路径||tail -n +5||head -n 6   // 显示 5 ～ 10 行的内容， 包括5 和10
+cat -n 文件路径/|tail -n +5\||head -n 6   // 显示 5 ～ 10 行的内容， 包括5 和10
 
 tail -n +iLinNum   // 从ILinNum开始显示到结束的内容
 
