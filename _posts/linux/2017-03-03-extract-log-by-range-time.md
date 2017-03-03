@@ -51,3 +51,10 @@ echo "$RESULT_STR write to file $FILE_NAME"
 echo -e '\n******************** end **************************\n'
 
 ```
+
+# 使用方式
+
+```
+./extract.sh server.log.2017-03-02 "22:10:" "22:30:"
+
+```
