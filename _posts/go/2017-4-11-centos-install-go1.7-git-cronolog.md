@@ -54,3 +54,8 @@ export PATH
 ```
 source /etc/profile && source ~/.bash_profile
 ```
+
+
+# 参考资料
+
+https://www.digitalocean.com/community/tutorials/how-to-install-go-1-7-on-centos-7
