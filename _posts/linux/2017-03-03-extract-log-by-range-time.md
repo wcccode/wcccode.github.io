@@ -112,7 +112,7 @@ echo -e '\n******************** end **************************\n'
 -原数据
 
 ```
-[root@snuat2jboss1 mylog]# cat test.log
+[root@user mylog]# cat test.log
 ......
 此处省略N行
 .....
