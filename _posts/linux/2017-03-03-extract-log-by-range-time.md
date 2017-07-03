@@ -7,6 +7,51 @@ tags: [linux]
 
 # 提取某段时间内的日志
 
+## 使用场景
+
+有时候需要提取指定时间段的日志信息，同时文件比较大不能直接打开，此时可以通过脚本来提取所需的信息，如：
+
+```
+......
+
+此处省略N行
+
+......
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+......
+
+此处省略N行
+
+......
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+......
+
+```
+
+需要获取16:10到17:10的数据需要怎么处理呢？
+
+首先日志格式要求第一部分是时间，通过使用cat、grep、head、tail、awk来获取到开始、结束时间的行号，并计算出总共行数。最后通过cat、head、tail来获取指定范围的行。
+
+## 添加extract.sh，内容如下
+
 ```
 
 #!/bin/bash
@@ -55,9 +100,76 @@ echo -e '\n******************** end **************************\n'
 
 ```
 
-# 使用方式
+## 使用方式
 
 ```
-./extract.sh server.log.2017-03-02 "^22:10:" "^22:30:"
+./extract.sh filename start_time [end_time]
+#时间格式支持正则表达式
+```
+
+获取文件中16:10到17:10的数据
+
+-原数据
+
+```
+[root@snuat2jboss1 mylog]# cat test.log
+......
+此处省略N行
+.....
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:09:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+16:10:04,973 INFO  [stdout] (StdoutThread) *********
+......
+此处省略N行
+.....
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:10:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+17:11:04,973 INFO  [stdout] (StdoutThread) *********
+......
+
+```
+
+-执行提取命令
+
+```
+[root@user mylog]# ./extract.sh test.log "^16:10" "^17:10"
+
+******************** start ***********************
+
+extract log from row num 9  to 21 count=12 write to file test.log.1610.1710
+
+******************** end **************************
+```
+
+-结果数据
+
+```
+[root@user mylog]# cat test.log.1610.1710 
+     9  16:10:04,973 INFO  [stdout] (StdoutThread) *********
+    10  16:10:04,973 INFO  [stdout] (StdoutThread) *********
+    11  16:10:04,973 INFO  [stdout] (StdoutThread) *********
+    12  16:10:04,973 INFO  [stdout] (StdoutThread) *********
+    13  16:10:04,973 INFO  [stdout] (StdoutThread) *********
+    14  ......
+    15  此处省略N行
+   16 ......
+    17  17:10:04,973 INFO  [stdout] (StdoutThread) *********
+    18  17:10:04,973 INFO  [stdout] (StdoutThread) *********
+    19  17:10:04,973 INFO  [stdout] (StdoutThread) *********
+    20  17:10:04,973 INFO  [stdout] (StdoutThread) *********
 
 ```
