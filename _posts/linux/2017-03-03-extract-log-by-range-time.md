@@ -109,7 +109,7 @@ echo -e '\n******************** end **************************\n'
 
 获取文件中16:10到17:10的数据
 
--原数据
+- 原数据
 
 ```
 [root@user mylog]# cat test.log
@@ -143,7 +143,7 @@ echo -e '\n******************** end **************************\n'
 
 ```
 
--执行提取命令
+- 执行提取命令
 
 ```
 [root@user mylog]# ./extract.sh test.log "^16:10" "^17:10"
@@ -155,7 +155,7 @@ extract log from row num 9  to 21 count=12 write to file test.log.1610.1710
 ******************** end **************************
 ```
 
--结果数据
+- 结果数据
 
 ```
 [root@user mylog]# cat test.log.1610.1710 
@@ -166,7 +166,7 @@ extract log from row num 9  to 21 count=12 write to file test.log.1610.1710
     13  16:10:04,973 INFO  [stdout] (StdoutThread) *********
     14  ......
     15  此处省略N行
-   16 ......
+    16 ......
     17  17:10:04,973 INFO  [stdout] (StdoutThread) *********
     18  17:10:04,973 INFO  [stdout] (StdoutThread) *********
     19  17:10:04,973 INFO  [stdout] (StdoutThread) *********
