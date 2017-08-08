@@ -14,7 +14,7 @@ tags: [maven,java]
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.parent</groupId>
+    <groupId>com.test</groupId>
     <artifactId>ParentProjectBuild</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -31,8 +31,8 @@ tags: [maven,java]
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cn.web</groupId>
-    <artifactId>SNXYWebProject</artifactId>
+    <groupId>cn.test</groupId>
+    <artifactId>WebProject</artifactId>
     <version>1.0.0</version>
     <name>SNXYWebProject</name>
     <packaging>war</packaging>
