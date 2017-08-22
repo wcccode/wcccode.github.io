@@ -7,6 +7,8 @@ sudo yum install git-all
 
 # install go1.7
 
+## method1 
+
 go download page https://golang.org/dl/
 
 ```
@@ -27,6 +29,13 @@ Output
 sudo tar -C /usr/local -xvzf go1.7.5.linux-amd64.tar.gz
 ```
 
+## mehtod2
+
+```
+yum install golang
+```
+
+## config go env
 ```
 sudo vi /etc/profile.d/path.sh
 ```
