@@ -36,6 +36,11 @@ yum install golang
 ```
 
 ## config go env
+
+```
+find / -name go
+```
+
 ```
 sudo vi /etc/profile.d/path.sh
 ```
