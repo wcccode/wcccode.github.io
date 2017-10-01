@@ -1,0 +1,18 @@
+
+# install ansible
+
+```
+yum install epel-release
+
+yum repolist
+
+yum install ansible
+```
+
+# config ssh login without password
+
+```
+ssh-keygen
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+```
