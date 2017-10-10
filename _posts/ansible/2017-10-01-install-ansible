@@ -14,5 +14,6 @@ yum install ansible
 ```
 ssh-keygen
 
-ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@host or ssh-copy-id -i ~/.ssh/id_rsa.pub "-p port user@host"
+
 ```
